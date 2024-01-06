@@ -77,13 +77,13 @@ NTSTATUS __fastcall IoCreateDriver(NTSTATUS(__fastcall* EntryPoint)(_In_ PDRIVER
 	//
 	// Setting up the driver object
 	// 
-	RtlZeroMemory(drv_obj, obj_size);								// Cleaning up
-	drv_obj->Type	= IO_TYPE_DRIVER;								// Specifying the driver type
-	drv_obj->Size	= sizeof(DRIVER_OBJECT);						// Setting its size
-	drv_obj->Flags	= DRVO_BUILTIN_DRIVER;							// Setting it as a BUILTIN_DRIVER					
+	RtlZeroMemory(drv_obj, obj_size);				// Cleaning up
+	drv_obj->Type	= IO_TYPE_DRIVER;				// Specifying the driver type
+	drv_obj->Size	= sizeof(DRIVER_OBJECT);			// Setting its size
+	drv_obj->Flags	= DRVO_BUILTIN_DRIVER;				// Setting it as a BUILTIN_DRIVER					
 	drv_obj->DriverExtension = (PDRIVER_EXTENSION)(drv_obj + 1);	// Setting up the driver extension
-	drv_obj->DriverExtension->DriverObject = drv_obj;				// Assigning the driver 
-	drv_obj->DriverInit = EntryPoint;								// Setting the driver entry point
+	drv_obj->DriverExtension->DriverObject = drv_obj;		// Assigning the driver 
+	drv_obj->DriverInit = EntryPoint;				// Setting the driver entry point
 
 
 	//
