@@ -6,11 +6,9 @@
 #include <windef.h>
 
 /* Definitions */
-extern "C"
 __declspec(dllimport) POBJECT_TYPE IoDriverObjectType;		// IoDriverObjectType
 
 // ObCreateObject
-extern "C"
 NTSTATUS NTAPI ObCreateObject(IN KPROCESSOR_MODE ProbeMode 	OPTIONAL,
 	IN POBJECT_TYPE 	Type,
 	IN POBJECT_ATTRIBUTES ObjectAttributes 	OPTIONAL,
