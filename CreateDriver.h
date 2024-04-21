@@ -15,7 +15,7 @@
 #include <ntifs.h>
 #include <ntstrsafe.h>
 #include <windef.h>
-#include "definitions.hpp"
+#include "definitions.h"
 
 
 //
