@@ -21,7 +21,7 @@
 //
 // Dummy function used as default function for the IRP_MJ functions
 //
-NTSTATUS NTAPI IopInvalidDeviceRequest(PDEVICE_OBJECT DeviceObject, PIRP Irp)
+NTSTATUS NTAPI IopInvalidDeviceRequest( _In_ PDEVICE_OBJECT DeviceObject, _In_ PIRP Irp)
 {
 	UNREFERENCED_PARAMETER(DeviceObject);
 	Irp->IoStatus.Status = STATUS_INVALID_DEVICE_REQUEST;
@@ -35,7 +35,7 @@ NTSTATUS NTAPI IopInvalidDeviceRequest(PDEVICE_OBJECT DeviceObject, PIRP Irp)
 // Custom IoCreateDriver in order to bypass PsLoadedModule and EtwTiLogDriverObjectLoad 
 // it makes easier tohe usage of IOCTL if you're using KdMapper
 // 
-NTSTATUS __fastcall IoCreateDriver(NTSTATUS(__fastcall* EntryPoint)(_In_ PDRIVER_OBJECT, _In_ PUNICODE_STRING))
+NTSTATUS __fastcall IoCreateDriver( _In_ NTSTATUS(__fastcall* EntryPoint)(_In_ PDRIVER_OBJECT, _In_ PUNICODE_STRING))
 {
 	//
 	// Variables
