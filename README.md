@@ -11,6 +11,6 @@ with the WDK provided by microsoft.
 ### If you're manual mapping:
 Remember that if you're manual mapping:
  - You must turn off the security check in `ProjectSettings -> C/C++ -> Security Check`
- - You also have to change the entry point from `FxDriverEntry` to `DriverEntry`
+ - You also have to change the entry point from `FxDriverEntry` to `DriverEntry` <br /> which you can find in `ProjectSetting -> Linker -> Entry Point`
 <br />
  - Th3Spl
