@@ -45,7 +45,7 @@ NTSTATUS CustomDriverEntry( _In_ PDRIVER_OBJECT DriverObject, _In_ PUNICODE_STRI
 // - Assuming that we're manual mapping the DriverObject field will be invalid
 // therefore we're gonna use IoCreateDriver implementation to get a valid DriverObject
 // 
-// REMEBER: 
+// REMEMBER: 
 // if you're manual mapping:
 //		- Go in C/C++ in settings and disable "Security Check"
 //		- Go in linker and set the entry point to "DriverEntry"
