@@ -137,7 +137,11 @@ NTSTATUS __fastcall IoCreateDriver( _In_ NTSTATUS( __fastcall* EntryPoint )( _In
 		return status;
 	}
 
+	
+	/* fixup --> Credits: https://github.com/danydollaro */
+	ClearFlag( drv_obj->Flags, DO_DEVICE_INITIALIZING );
 
+	
 	//
 	// Actually starting the driver's entry point (passing the driver object)
 	// 
@@ -163,4 +167,5 @@ NTSTATUS __fastcall IoCreateDriver( _In_ NTSTATUS( __fastcall* EntryPoint )( _In
 	}
 
 	return status; // If everything went correctly this will return the driver's result
+
 }
